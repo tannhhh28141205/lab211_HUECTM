@@ -10,18 +10,18 @@ public class TaskManager {
     private ArrayList<Task> list = new ArrayList<>();
     private int idCounter = 1;
 
-    public int addTask(String requirementName, int taskTypeId,
+    public int addTask(String name, int taskType,
             String date, double planFrom, double planTo,
             String assignee, String reviewer) throws Exception {
 
-        InputValidation.checkTaskType(taskTypeId);
+        InputValidation.checkTaskType(taskType);
         InputValidation.checkDate(date);
         InputValidation.checkTime(planFrom);
         InputValidation.checkTime(planTo);
         InputValidation.checkPlan(planFrom, planTo);
 
-        Task task = new Task(idCounter++, taskTypeId,
-                requirementName, date,
+        Task task = new Task(idCounter++, taskType,
+                name, date,
                 planFrom, planTo,
                 assignee, reviewer);
 
