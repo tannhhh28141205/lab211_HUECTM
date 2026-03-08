@@ -2,14 +2,12 @@ package model;
 
 public class Task {
 
-    private final int id;
-    private final int taskTypeId;
-    private final String requirementName;
-    private final String date;
-    private final double planFrom;
-    private final double planTo;
-    private final String assignee;
-    private final String reviewer;
+    private int id;
+    private int taskType;
+    private String name, date;
+    private double planFrom, planTo;
+    private String assignee, reviewer;
+    private Date parseDate;
 
     public Task(int id, int taskTypeId, String requirementName,
             String date, double planFrom, double planTo,
@@ -75,4 +73,5 @@ public class Task {
     public double getTime() {
         return planTo - planFrom;
     }
+
 }
