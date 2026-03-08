@@ -9,7 +9,7 @@ public class Task {
     private String assignee, reviewer;
   
 
-    public Task(int id, int taskTypeId, String requirementName,
+    public Task(int id, int taskTypeId, String name,
             String date, double planFrom, double planTo,
             String assignee, String reviewer) {
 
@@ -75,4 +75,5 @@ public class Task {
     }
 
 }
+
 
