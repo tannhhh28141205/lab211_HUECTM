@@ -7,15 +7,14 @@ public class Task {
     private String name, date;
     private double planFrom, planTo;
     private String assignee, reviewer;
-  
 
-    public Task(int id, int taskTypeId, String name,
+    public Task(int id, int taskType, String name,
             String date, double planFrom, double planTo,
             String assignee, String reviewer) {
 
         this.id = id;
-        this.taskTypeId = taskTypeId;
-        this.requirementName = requirementName;
+        this.taskType = taskType;
+        this.name = name;
         this.date = date;
         this.planFrom = planFrom;
         this.planTo = planTo;
@@ -27,12 +26,12 @@ public class Task {
         return id;
     }
 
-    public int getTaskTypeId() {
-        return taskTypeId;
+    public int getTaskType() {
+        return taskType;
     }
 
-    public String getRequirementName() {
-        return requirementName;
+    public String getName() {
+        return name;
     }
 
     public String getDate() {
@@ -56,7 +55,7 @@ public class Task {
     }
 
     public String getTaskTypeName() {
-        switch (taskTypeId) {
+        switch (taskType) {
             case 1:
                 return "Code";
             case 2:
@@ -73,7 +72,4 @@ public class Task {
     public double getTime() {
         return planTo - planFrom;
     }
-
 }
-
-
