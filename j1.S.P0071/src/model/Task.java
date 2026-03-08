@@ -7,7 +7,7 @@ public class Task {
     private String name, date;
     private double planFrom, planTo;
     private String assignee, reviewer;
-    private Date parseDate;
+  
 
     public Task(int id, int taskTypeId, String requirementName,
             String date, double planFrom, double planTo,
@@ -75,3 +75,4 @@ public class Task {
     }
 
 }
+
