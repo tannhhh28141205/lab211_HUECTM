@@ -12,32 +12,27 @@ public class TaskController {
 
         while (true) {
 
-            try {
-                int choice = view.menu();
+            int choice = view.menu();
 
-                switch (choice) {
-                    case 1:
-                        addTask();
-                        break;
-                    case 2:
-                        deleteTask();
-                        break;
-                    case 3:
-                        view.display(manager.getDataTasks());
-                        break;
-                    case 4:
-                        return;
-                    default:
-                        view.showMessage("Invalid choice.");
-                }
-
-            } catch (Exception e) {
-                view.showMessage(e.getMessage());
+            switch (choice) {
+                case 1:
+                    addTask();
+                    break;
+                case 2:
+                    deleteTask();
+                    break;
+                case 3:
+                    view.display(manager.getDataTasks());
+                    break;
+                case 4:
+                    return;
+                default:
+                    view.showMessage("Invalid choice.");
             }
         }
     }
 
-    private void addTask() throws Exception {
+    private void addTask() {
 
         String name = view.input("Requirement Name: ");
         int type = Integer.parseInt(view.input("Task Type (1-4): "));
@@ -51,7 +46,7 @@ public class TaskController {
         view.showMessage("Add successful.");
     }
 
-    private void deleteTask() throws Exception {
+    private void deleteTask() {
 
         int id = Integer.parseInt(view.input("ID: "));
         manager.deleteTask(id);
