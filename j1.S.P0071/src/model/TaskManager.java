@@ -12,7 +12,7 @@ public class TaskManager {
 
     public int addTask(String name, int taskType,
             String date, double planFrom, double planTo,
-            String assignee, String reviewer) throws Exception {
+            String assignee, String reviewer) {
 
         InputValidation.checkTaskType(taskType);
         InputValidation.checkDate(date);
@@ -29,7 +29,7 @@ public class TaskManager {
         return task.getId();
     }
 
-    public void deleteTask(int id) throws Exception {
+    public void deleteTask(int id) {
 
         Task found = null;
 
@@ -41,7 +41,8 @@ public class TaskManager {
         }
 
         if (found == null) {
-            throw new Exception("Task not found.");
+            System.out.println("Task not found.");
+            return;
         }
 
         list.remove(found);
